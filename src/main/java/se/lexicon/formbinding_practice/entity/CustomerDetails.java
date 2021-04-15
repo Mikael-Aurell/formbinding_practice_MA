@@ -13,7 +13,6 @@ public class CustomerDetails {
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(nullable = false)
     @NotBlank(message= "Field email is required")
     private String detailsId;
 
