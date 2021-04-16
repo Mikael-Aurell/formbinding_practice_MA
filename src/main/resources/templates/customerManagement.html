@@ -10,20 +10,54 @@
         <div class="card-header">
             <h2>Customer List</h2>
             <p>
-                <a th:href="@{/customer/view/addCustomerForm}" class="btn btn-success" >Add Customer form</a>
+                <a th:href="@{/customerManagement/showCustomerForm}" class="btn btn-success" >Add Customer</a>
             </p>
         </div>
-        <div class="card-body">
 
+        <div th:if="${message}" th:text="${message}" th:class="${'alert' + alertClass}"></div>
+
+        <div class="card-body">
+            <div th:if="${customerDtoList.isEmpty()}">
+                No Customers added to the list.
+            </div>
+            <div th:unless="${customerDtoList.isEmpty()}">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>CustomerId</th>
+                        <th>CustomerEmail</th>
+                        <th>Details</th>
+                    </tr>
+                    </thead>
+
+                    <br/>
+
+                    <tbody>
+                        <tr th:each="customerDto : ${customerDtoList}">
+                            <td>
+                                <span th:text="${customerDto.customerId}"></span>
+                            </td>
+                            <td>
+                                <span th:text="${customerDto.email}"></span>
+                            </td>
+                            <td>
+                                <a href="#" class="btn btn-info"
+                                   th:href="@{/customerManagement/find/{customerId}
+                                   (customerId=${customerDto.customerId})}"
+                                >Details</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="card-footer"></div>
+        <card-footer th:insert="fragments/cardFooter :: cardFooter_fragment" />
     </div>
     <br/>
 </div>
 
 
 <footer th:insert="fragments/footer :: footer_fragment" class="py-5 bg-dark fixed-bottom" />
-
 
 </body>
 </html>
