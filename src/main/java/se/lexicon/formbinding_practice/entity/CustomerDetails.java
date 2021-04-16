@@ -1,5 +1,6 @@
 package se.lexicon.formbinding_practice.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+@Data
 @Entity
 public class CustomerDetails {
     @Id
@@ -21,9 +23,15 @@ public class CustomerDetails {
     private String street;
 //    123 test st, test city, TT 12345
 
+    @Column(nullable = false)
     private String zipCode;
 
+    @Column(nullable = false)
+    private String city;
+
+    @Column(nullable = false)
     private String homePhone;
 
+    @Column(nullable = false)
     private String cellPhone;
 }
