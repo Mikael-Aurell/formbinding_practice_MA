@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="fragments/headerResources :: header_resources" />
+
+<body>
+<nav th:insert="fragments/navbar :: nav_fragment" />
+
+<div class="container">
+    <div class="card">
+        <div class="card-header"> <h2>Home</h2> </div>
+        <div class="card-body">
+            <h2>Welcome to Form binding Practice</h2>
+        <p>Go to Control Panel to add a Customer</p>
+        </div>
+        <div class="card-footer"></div>
+    </div>
+    <br/>
+</div>
+
+
+<footer th:insert="fragments/footer :: footer_fragment" class="py-5 bg-dark fixed-bottom" />
+
+
+</body>
+</html>

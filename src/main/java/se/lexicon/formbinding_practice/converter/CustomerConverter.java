@@ -1,5 +1,6 @@
 package se.lexicon.formbinding_practice.converter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import se.lexicon.formbinding_practice.dto.CustomerDto;
 import se.lexicon.formbinding_practice.entity.Customer;
@@ -12,6 +13,7 @@ public class CustomerConverter implements Converter<Customer, CustomerDto> {
 
     CustomerDetailsConverter customerDetailsConverter;
 
+    @Autowired
     public void setCustomerDetailsConverter(CustomerDetailsConverter customerDetailsConverter) {
         this.customerDetailsConverter = customerDetailsConverter;
     }

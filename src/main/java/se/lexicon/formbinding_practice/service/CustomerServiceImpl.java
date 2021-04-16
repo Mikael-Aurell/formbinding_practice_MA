@@ -1,5 +1,6 @@
 package se.lexicon.formbinding_practice.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import se.lexicon.formbinding_practice.converter.CustomerConverter;
 import se.lexicon.formbinding_practice.dto.CustomerDto;
@@ -15,10 +16,12 @@ public class CustomerServiceImpl implements CustomerService{
     CustomerRepository customerRepository;
     CustomerConverter customerConverter;
 
+    @Autowired
     public void setCustomerRepository(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
+    @Autowired
     public void setCustomerConverter(CustomerConverter customerConverter) {
         this.customerConverter = customerConverter;
     }

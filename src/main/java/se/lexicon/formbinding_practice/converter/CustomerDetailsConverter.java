@@ -9,6 +9,7 @@ import java.util.Collection;
 
 @Component
 public class CustomerDetailsConverter implements Converter<CustomerDetails, CustomerDetailsDto> {
+
     @Override
     public CustomerDetails toModel(CustomerDetailsDto dto) {
         CustomerDetails customerDetails = new CustomerDetails();
