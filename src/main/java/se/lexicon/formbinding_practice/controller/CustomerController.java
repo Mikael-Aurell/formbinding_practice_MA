@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/Customer")
 public class CustomerController {
 
-    @GetMapping("/")
+    /*@GetMapping("/")
     String showList(){
         return "/customerList";
     }
@@ -22,5 +22,5 @@ public class CustomerController {
     @PostMapping("/addCustomer")
     String addCustomerToDatabase(){
         return "redirect:/Customer/";
-    }
+    }*/
 }

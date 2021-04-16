@@ -13,7 +13,7 @@ import se.lexicon.formbinding_practice.service.CustomerService;
 import javax.validation.Valid;
 
 @Controller
-@RequestMapping("/CustomerManagement")
+@RequestMapping("/customerManagement/")
 public class CustomerManagementController {
 
     CustomerService customerService;
