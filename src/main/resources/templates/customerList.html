@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header_resources">
     <meta charset="UTF-8">
-    <title>List of Customer</title>
+    <title th:text="#{project.title}"></title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css} "/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <style>
+        body{
+            padding-top: 80px;
+        }
+        footer{
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <p>Customer List</p>
 </div>
+<footer th:fragment="footer_fragment" class="py-5 bg-dark fixed-bottom">
+    <p class="m-0 text-center text-white"> Copyright &copy; MOS 2021 by Mikael Aurell</p>
+</footer>
 </body>
 </html>
